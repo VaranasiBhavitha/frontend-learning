@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page</title>
+
+<style>
+    body{
+        background-color:#555;
+        width:100%;
+        min-height:100vh;
+        font-family:sans-serif;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin:0;
+    }
+
+    .register-container{
+        background-color:white;
+        width:420px;
+        padding:40px;
+        border-radius:8px;
+    }
+
+    .register-header{
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    .register-header h1{
+        margin:0;
+        font-size:28px;
+    }
+
+    .input-group{
+        margin-bottom:15px;
+    }
+
+    .input-group label{
+        display:block;
+        margin-bottom:8px;
+        font-weight:600;
+    }
+
+    .input-group input[type="text"],
+    .input-group input[type="password"],
+    .input-group textarea,
+    .input-group select{
+        width:100%;
+        padding:10px;
+        font-size:16px;
+        box-sizing:border-box;
+    }
+
+    textarea{
+        resize:none;
+        height:80px;
+    }
+
+    .radio-group,
+    .checkbox-group{
+        margin-top:8px;
+    }
+
+    .radio-group label,
+    .checkbox-group label{
+        font-weight:normal;
+        margin-right:15px;
+    }
+
+    .dob select{
+        padding:8px;
+        margin-right:5px;
+    }
+
+    .button-group{
+        display:flex;
+        justify-content:space-around;
+        margin-top:20px;
+    }
+
+    .btn{
+        width:100%;
+        padding:12px;
+        margin:8px;
+        border:none;
+        color:white;
+        font-size:16px;
+        cursor:pointer;
+    }
+
+    .btn-register{
+        background-color:rgb(54,112,239);
+    }
+
+    .btn-reset{
+        background-color:#555;
+    }
+
+</style>
+
+</head>
+<body>
+
+<div class="register-container">
+
+    <div class="register-header">
+        <h1>Registration Page</h1>
+        <p>Student Registration Form</p>
+    </div>
+
+    <form action="#" method="post">
+
+        <!-- Name -->
+        <div class="input-group">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Enter Your Name">
+        </div>
+
+        <!-- Password -->
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter Password">
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+            <label>E-mail ID</label>
+            <input type="text" name="email" placeholder="Enter Email ID">
+        </div>
+
+        <!-- Phone -->
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="text" name="phone" placeholder="Enter Phone Number">
+        </div>
+
+        <!-- Sex -->
+        <div class="input-group">
+            <label>Sex</label>
+            <div class="radio-group">
+                <input type="radio" name="sex" value="Male"> Male
+                <input type="radio" name="sex" value="Female"> Female
+            </div>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="input-group">
+            <label>Date of Birth</label>
+            <div class="dob">
+                <select name="day">
+                    <option>Day</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <!-- Add up to 31 -->
+                </select>
+
+                <select name="month">
+                    <option>Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+
+                <select name="year">
+                    <option>Year</option>
+                    <option>2000</option>
+                    <option>2001</option>
+                    <option>2002</option>
+                    <option>2003</option>
+                    <option>2004</option>
+                    <option>2005</option>
+                    <option>2006</option>
+                    <option>2007</option>
+                    <option>2008</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="input-group">
+            <label>Languages Known</label>
+            <div class="checkbox-group">
+                <input type="checkbox" name="language" value="English"> English
+                <input type="checkbox" name="language" value="Telugu"> Telugu
+                <input type="checkbox" name="language" value="Hindi"> Hindi
+                <input type="checkbox" name="language" value="Tamil"> Tamil
+            </div>
+        </div>
+
+        <!-- Address -->
+        <div class="input-group">
+            <label>Address</label>
+            <textarea name="address" placeholder="Enter Address"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <button type="submit" class="btn btn-register">Register</button>
+            <button type="reset" class="btn btn-reset">Reset</button>
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>

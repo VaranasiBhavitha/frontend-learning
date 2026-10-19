@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Selectors Example</title>
+    <style>
+        /* 1. Universal Selector */
+
+        * {
+            font-family: Arial;
+        }
+
+        /* 2. Element Selector */
+        h1 {
+            color: red;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+
+        /* 3. ID Selector */
+        #heading {
+            background-color: yellow;
+            text-align: center;
+        }
+
+
+        /* 4. Class Selector */
+        .student {
+            color: blue;
+            font-weight: bold;
+        }
+
+
+        /* 5. Group Selector */
+
+        h2,
+        h3 {
+            color: green;
+        }
+
+
+        /* 6. Descendant Selector */
+        div p {
+            background-color: lightgray;
+        }
+
+
+
+        /* 7. Child Selector */
+        section>p {
+            color: purple;
+        }
+
+
+
+        /* 8. Adjacent Sibling Selector */
+        h2+p {
+            color: red;
+        }
+
+
+
+        /* 9. General Sibling Selector */
+        h3~p {
+            color: brown;
+        }
+
+
+
+        /* 10. Attribute Selector */
+
+        input[type="text"] {
+            background-color: lightyellow;
+        }
+
+
+        /* 11. Pseudo-class Selector */
+
+        a:hover {
+            color: white;
+            background-color: blue;
+        }
+
+        /* 12. Pseudo-element Selector */
+        p::first-letter {
+            font-size: 28px;
+            color: red;
+            font-weight: bold;
+        }
+
+        
+    </style>
+
+</head>
+
+<body>
+
+    <h1 id="heading">CSS Selectors Demo</h1>
+
+    <p>This paragraph uses the Element Selector.</p>
+
+    <p class="student">Rahul - AIML Student</p>
+
+    <p class="student">Ramesh - CSE Student</p>
+
+    <h2>Adjacent Sibling Selector</h2>
+
+    <p>This paragraph comes immediately after H2.</p>
+
+    <div>
+
+        <p>This paragraph is inside DIV (Descendant Selector).</p>
+
+    </div>
+
+    <section>
+
+        <p>This is the direct child of SECTION (Child Selector).</p>
+
+    </section>
+
+    <h3>General Sibling Selector</h3>
+
+    <p>Paragraph One</p>
+
+    <p>Paragraph Two</p>
+
+    <p>Paragraph Three</p>
+
+    <br>
+
+    Name:
+    <input type="text" placeholder="Enter Name">
+
+    <br><br>
+
+    Password:
+    <input type="password" placeholder="Enter Password">
+
+    <br><br>
+
+    <a href="#">Move Mouse Here</a>
+    
+</body>
+
+</html>

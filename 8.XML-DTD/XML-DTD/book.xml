@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!ELEMENT book (title, author, isbn, publisher, edition, price)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT isbn (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT edition (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+
+]>
+<book>
+    <title>C Programming</title>
+    <author>Balaguru Swamy</author>
+    <isbn>123-4567-89</isbn>
+    <publisher>S. Chand</publisher>
+    <edition>First</edition>
+    <price>250</price>
+</book>

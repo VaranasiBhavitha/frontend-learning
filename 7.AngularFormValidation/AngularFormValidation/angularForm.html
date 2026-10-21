@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Student Details Validation</title>
+    <script src="angular.min.js"></script>
+    <style>
+        input.ng-touched.ng-invalid {
+            border: 2px solid red;
+        }
+
+        input.ng-touched.ng-valid {
+            border: 2px solid green;
+        }
+
+        select.ng-touched.ng-invalid {
+            border: 2px solid red;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+
+<body ng-controller="formController">
+    <h2>Student Details</h2>
+
+    <form name="studentForm" novalidate ng-submit="submitForm()">
+
+        <!-- Name -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" ng-model="student.name" required>
+        <span class="error" ng-show="studentForm.name.$touched && studentForm.name.$error.required">
+            Name is required.
+        </span>
+        <br><br>
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" ng-model="student.email" required>
+        <span class="error" ng-show="studentForm.email.$touched && studentForm.email.$error.required">
+            Email is required.
+        </span>
+        <span class="error" ng-show="studentForm.email.$touched && studentForm.email.$error.email">
+            Invalid email format.
+        </span>
+        <br><br>
+
+        <!-- Student ID -->
+        <label for="studentId">Student ID:</label>
+        <input type="text" id="studentId" name="studentId" ng-model="student.studentId" 
+            ng-pattern="/^(24A51A42|25A55A42)\d{2}$/" required>
+        <span class="error" ng-show="studentForm.studentId.$touched && studentForm.studentId.$error.pattern">
+            Invalid Student ID. Format: 24A51A42XX or 25A55A42XX
+        </span>
+        <br><br>
+
+        <!-- Program -->
+        <label for="program">Program:</label>
+        <select id="program" name="program" ng-model="student.program" required>
+            <option value="">Select Program</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Electrical">Electrical</option>
+            <option value="Mechanical">Mechanical</option>
+        </select>
+        <span class="error" ng-show="studentForm.program.$touched && studentForm.program.$error.required">
+            Program selection is required.
+        </span>
+        <br><br>
+
+        <!-- Submit -->
+        <button type="submit" ng-disabled="studentForm.$invalid">Submit</button>
+    </form>
+
+    <!-- Show Data -->
+    <div ng-if="studentForm.$valid">
+        <h3>Form is valid! Student details:</h3>
+        <pre>{{ student | json }}</pre>
+    </div>
+
+    <script>
+        angular.module('myApp', [])
+            .controller('formController', function ($scope) {
+                $scope.student = {};
+                $scope.submitForm = function () {
+                    if ($scope.studentForm.$valid) {
+                        alert("Form Submitted Successfully!");
+                    }
+                };
+            });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Information</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #book-list {
+            margin-top: 20px;
+        }
+
+        .book-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Book Information</h1>
+    <button id="load-books">Load Books</button>
+    <div id="book-list"></div>
+
+    <script>
+        $(document).ready(function () {
+            $('#load-books').click(function () {
+                $.ajax({
+                    url: 'books.xml',
+                    method: 'GET',
+                    dataType: 'xml',
+                    success: function (data) {
+                        var bookList = $('#book-list');
+                        bookList.empty(); // Clear any existing content
+
+                        $(data).find('book').each(function () {
+                            var title = $(this).find('title').text();
+                            var author = $(this).find('author').text();
+                            var isbn = $(this).find('isbn').text();
+                            var publisher = $(this).find('publisher').text();
+                            var edition = $(this).find('edition').text();
+                            var price = $(this).find('price').text();
+
+                            var bookItem = `
+                                <div class="book-item">
+                                    <h2>${title}</h2>
+                                    <p><strong>Author:</strong> ${author}</p>
+                                    <p><strong>ISBN:</strong> ${isbn}</p>
+                                    <p><strong>Publisher:</strong> ${publisher}</p>
+                                    <p><strong>Edition:</strong> ${edition}</p>
+                                    <p><strong>Price:</strong> ${price}</p>
+                                </div>
+                            `;
+                            bookList.append(bookItem);
+                        });
+                    },
+                    error: function (xhr, status, error) {
+                        alert('Failed to load book data: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

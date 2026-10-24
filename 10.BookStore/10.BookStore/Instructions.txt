@@ -1,0 +1,126 @@
+Project Structure:
+
+XAMPP
+│
+tomcat
+│
+webapps
+│
+├── docs
+├── examples
+├── host-manager
+├── manager
+├── ROOT
+│
+└── BookStore
+    ├── catalogue.jsp
+    ├── c.jpeg
+    ├── cpp.jpg
+    ├── java.jpg
+    ├── html.jpeg
+    │
+    └── WEB-INF
+        └── lib
+            └── mysql-connector-j-8.0.32.jar
+
+How to Download Java
+
+Visit:
+https://www.oracle.com/java/technologies/downloads/#jdk21-windows
+
+Goto Windows
+x64 MSI Installer
+
+Download Link: 165.71 MB	
+https://download.oracle.com/java/21/latest/jdk-21_windows-x64_bin.msi (sha256)
+
+
+
+How to Download XAMPP
+
+Visit:
+https://www.apachefriends.org/download.html
+
+Download: 149 Mb
+8.2.12 / PHP 8.2.12 
+
+
+
+
+How to Download MYSQL Software
+
+Visit:
+https://downloads.mysql.com/archives/shell/
+
+Product Version: 8.0.43
+Operating System: Micorsoft Windows
+
+Download - 121.8MB FileSize
+Windows (x86, 64-bit), MSI Installer
+
+
+
+
+Goto mysql 8.0 Command Line Client
+
+
+CREATE DATABASE bookstore;
+USE bookstore;
+
+CREATE TABLE book
+(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    category VARCHAR(50),
+    book_name VARCHAR(100),
+    author VARCHAR(100),
+    publication VARCHAR(100),
+    price DOUBLE,
+    quantity INT,
+    amount DOUBLE
+);
+
+
+
+Insert Book Details:
+
+
+INSERT INTO book
+(category, book_name, author, publication, price, quantity, amount)
+VALUES
+('C', 'C Programming', 'Balaguru Swamy', 'S.Chand', 50, 10, 500);
+
+INSERT INTO book
+(category, book_name, author, publication, price, quantity, amount)
+VALUES
+('CSS', 'CSS Programming', 'Michael Bowers', 'Apress', 30, 5, 150);
+
+INSERT INTO book
+(category, book_name, author, publication, price, quantity, amount)
+VALUES
+('Java', 'Java Programming', 'Brett Spell', 'Star', 50, 8, 400);
+
+INSERT INTO book
+(category, book_name, author, publication, price, quantity, amount)
+VALUES
+('HTML', 'HTML Programming', 'Elizabeth', 'S.Chand', 50, 6, 300);
+
+
+Check the data:
+
+SELECT * FROM book;
+
+
+
+
+How to Execute:
+
+OPEN XAMPP Control Panel
+
+Tomcat Start Button
+
+Goto Web Browser
+
+Enter URL:
+http://localhost:8080/BookStore/catalogue.jsp
+
+

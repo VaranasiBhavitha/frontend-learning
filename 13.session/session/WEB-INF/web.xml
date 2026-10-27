@@ -1,0 +1,22 @@
+<web-app>
+
+<servlet>
+		<servlet-name>session2</servlet-name>
+		<servlet-class>secondservlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>session2</servlet-name>
+		<url-pattern>/ss</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>session1</servlet-name>
+		<servlet-class>firstservlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>session1</servlet-name>
+		<url-pattern>/fs</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>

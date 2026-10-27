@@ -1,0 +1,21 @@
+<web-app>
+
+	  
+	<servlet>
+		<servlet-name>c2</servlet-name>
+		<servlet-class>cs2</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c2</servlet-name>
+		<url-pattern>/cs2</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>c1</servlet-name>
+		<servlet-class>cs1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>c1</servlet-name>
+		<url-pattern>/cs1</url-pattern>
+	</servlet-mapping>
+
+</web-app>

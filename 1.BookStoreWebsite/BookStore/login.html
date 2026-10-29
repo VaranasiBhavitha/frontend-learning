@@ -1,0 +1,27 @@
+<!--login.html-->
+<html>
+<head><title>login</title>
+ <script type="text/javascript">
+function one()
+{
+ var a=f.uname.value;
+ var b=f.pwd.value;
+ if(a=="aditya" && b=="aditya")
+  alert("Authenticated");
+ else
+  alert("Retry");
+ }
+ </script>
+</head>
+<body>
+<form name="f">
+ <div align="center">
+ Username:<input type="text" size="10" name="uname" value=""/><br><br>
+ Password:<input type="password" size="10" name="pwd" value=""/><br><br>
+ <input type="submit" value="submit" onclick="one()"/>
+ <input type="reset" value="reset"/>
+</div>
+</form>
+</body>
+</html>
+

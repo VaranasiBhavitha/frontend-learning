@@ -1,0 +1,56 @@
+<!--registration.html-->
+<html>
+<head><title>registration</title>
+<script>
+function validate()
+{
+ var p=f.pwd.value;
+ var i=p.length;
+ var a=f.email.value;
+ var a1=a.indexOf("@");
+ var dot=a.indexOf(".");
+ if(i<6)
+ alert("password must be six charecters");
+ if(a1<1||dot<a1+2||dot+2>a.length)
+  alert("retry");
+}
+</script>
+</head>
+<body>
+
+<h3>Registration Form</h3>
+<form name="f">
+
+<pre>
+Name            :<input type="text" name="name" size="10"/><br>
+Password        :<input type="password" name="pwd" size="10"/><br>
+Email Id        :<input type="text" name="email" size="10"/><br>
+Phone No        :<input type="text" name="pno" size="10"/><br>
+Sex             : <input type="radio" name="r1" checked/>Male <input type="radio" name="r1" />Female <br>
+Date Of Birth   :<select name="day">
+                   <option>1</option>  
+                   <option>2</option>  
+                   <option>3</option>  
+                   <option>4</option>  
+                   <option>5</option>  
+                   <option>6</option>
+                   </select><select name="mon">
+                            <option>jan</option> 
+                            <option>feb</option>  
+                            <option>mar</option>  
+                            <option>sep</option>  
+                            </select><select name="year">
+                                     <option>1990</option>
+                                     <option>1991</option>
+                                     <option>1992</option>
+                                     <option>1993</option>
+                                     </select><br><br>
+Languages Known :<input type="checkbox" name="c1"  checked/>c
+                 <input type="checkbox" name="c2" />c++
+                 <input type="checkbox" name="c3" />java<br><br>
+Address         :<textarea name="text" value=" " rows="5" cols="10" scrolling="no"></textarea><br><br>
+<input type="submit" value="submit" name="submit" onclick="validate()"/>   <input type="reset" value="reset"/>
+</pre>             
+ </form>                               
+</body>
+</html>
